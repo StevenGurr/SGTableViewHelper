@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B03FFEA720E2D51100057E7E /* SGTableViewData.h in Headers */ = {isa = PBXBuildFile; fileRef = B03FFEA520E2D51100057E7E /* SGTableViewData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B03FFEAE20E2D55800057E7E /* SGTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */; };
+		B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B03FFEA220E2D51100057E7E /* SGTableViewData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGTableViewData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03FFEA520E2D51100057E7E /* SGTableViewData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGTableViewData.h; sourceTree = "<group>"; };
 		B03FFEA620E2D51100057E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewDataSource.swift; sourceTree = "<group>"; };
+		B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SGTableViewData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			children = (
 				B03FFEA520E2D51100057E7E /* SGTableViewData.h */,
 				B03FFEA620E2D51100057E7E /* Info.plist */,
+				B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */,
+				B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */,
 			);
 			path = SGTableViewData;
 			sourceTree = "<group>";
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					B03FFEA120E2D51100057E7E = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -130,6 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03FFEAE20E2D55800057E7E /* SGTableViewDataSource.swift in Sources */,
+				B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 		B03FFEAB20E2D51100057E7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -276,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stevengurr.SGTableViewData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +295,7 @@
 		B03FFEAC20E2D51100057E7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
