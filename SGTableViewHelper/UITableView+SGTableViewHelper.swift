@@ -8,8 +8,8 @@
 
 import UIKit
 
-fileprivate let helperKey = "SGHelper"
-fileprivate let handlerKey = "SGTableViewHandler"
+private let helperKey = "SGHelper"
+private let handlerKey = "SGTableViewHandler"
 
 public extension UITableView {
     public var sgTableViewHelper: SGTableViewHelper? {

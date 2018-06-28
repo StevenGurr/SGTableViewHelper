@@ -82,6 +82,7 @@
 				B03FFE9E20E2D51100057E7E /* Frameworks */,
 				B03FFE9F20E2D51100057E7E /* Headers */,
 				B03FFEA020E2D51100057E7E /* Resources */,
+				B02C532120E57ADB00FEA76A /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -133,6 +134,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B02C532120E57ADB00FEA76A /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = swiftlint;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B03FFE9D20E2D51100057E7E /* Sources */ = {

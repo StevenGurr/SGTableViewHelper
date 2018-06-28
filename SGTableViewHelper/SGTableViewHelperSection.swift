@@ -19,4 +19,3 @@ public struct SGTableViewHelperSection {
         self.titleForFooter = titleForFooter
     }
 }
-
