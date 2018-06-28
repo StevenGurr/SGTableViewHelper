@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     
     lazy var helper: SGTableViewHelper = {
-        let row = PersonNameRow.nameCell
-        let section = SGTableViewHelperSection(rows: [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")])
-        return SGTableViewHelper(sections: [section])
+        let rows = [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")]
+//        let section = SGTableViewHelperSection(rows: rows)
+//        return SGTableViewHelper(sections: [section])
+        return SGTableViewHelper(rows: rows)
     }()
     
     override func viewDidLoad() {
