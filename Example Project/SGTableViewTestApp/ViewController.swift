@@ -10,29 +10,11 @@ import UIKit
 import SGTableViewData
 
 class ViewController: UIViewController {
-    enum Row: SGTableViewDataSourceRow {
-        case nameCell(name: String)
-        
-        var reuseIdentifier: String {
-            switch self {
-            case .nameCell:
-                return "NameCell"
-            }
-        }
-        
-        func willDisplay(cell: UITableViewCell) {
-            switch self {
-            case let .nameCell(name):
-                (cell as? NameCell)?.configure(name: name)
-            }
-        }
-    }
-    
     @IBOutlet private var tableView: UITableView!
     
     lazy var data: SGTableViewDataSource = {
-        let row = Row.nameCell
-        let section = SGTableViewDataSourceSection(rows: [Row.nameCell(name: "Dave"), Row.nameCell(name: "Geoffery")])
+        let row = PersonNameRow.nameCell
+        let section = SGTableViewDataSourceSection(rows: [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")])
         return SGTableViewDataSource(sections: [section])
     }()
     

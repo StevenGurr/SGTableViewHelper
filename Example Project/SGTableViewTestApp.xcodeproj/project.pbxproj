@@ -14,6 +14,7 @@
 		B03FFEC620E2D6E000057E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC420E2D6E000057E7E /* LaunchScreen.storyboard */; };
 		B03FFEDA20E2D83300057E7E /* SGTableViewData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03FFED820E2D77100057E7E /* SGTableViewData.framework */; };
 		B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDB20E2DB0400057E7E /* NameCell.swift */; };
+		B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B03FFEC720E2D6E000057E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03FFED320E2D77100057E7E /* SGTableViewData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGTableViewData.xcodeproj; path = ../SGTableViewData.xcodeproj; sourceTree = "<group>"; };
 		B03FFEDB20E2DB0400057E7E /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				B03FFEBB20E2D6DE00057E7E /* AppDelegate.swift */,
 				B03FFEBD20E2D6DE00057E7E /* ViewController.swift */,
+				B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */,
 				B03FFEDB20E2DB0400057E7E /* NameCell.swift */,
 				B03FFEBF20E2D6DE00057E7E /* Main.storyboard */,
 				B03FFEC220E2D6E000057E7E /* Assets.xcassets */,
@@ -186,6 +189,7 @@
 			files = (
 				B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */,
 				B03FFEBE20E2D6DE00057E7E /* ViewController.swift in Sources */,
+				B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */,
 				B03FFEBC20E2D6DE00057E7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
