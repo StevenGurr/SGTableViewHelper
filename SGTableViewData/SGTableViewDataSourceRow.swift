@@ -10,6 +10,14 @@ import Foundation
 
 public protocol SGTableViewDataSourceRow {
     var reuseIdentifier: String { get }
-    var configureBlock: (UITableViewCell) -> Void { get }
+    
+    // UITableViewDelegate callbacks
     func willDisplay(cell: UITableViewCell)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+}
+
+public extension SGTableViewDataSourceRow {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

@@ -20,17 +20,10 @@ class ViewController: UIViewController {
             }
         }
         
-        var configureBlock: (UITableViewCell) -> Void {
-            switch self {
-            case .nameCell:
-                return { _ in }
-            }
-        }
-        
         func willDisplay(cell: UITableViewCell) {
             switch self {
             case let .nameCell(name):
-                (cell as? NameCell)?.configureNameCell(name: name)
+                (cell as? NameCell)?.configure(name: name)
             }
         }
     }
@@ -39,7 +32,7 @@ class ViewController: UIViewController {
     
     lazy var data: SGTableViewDataSource = {
         let row = Row.nameCell
-        let section = SGTableViewDataSourceSection(rows: [Row.nameCell(name: "Dave"), Row.nameCell(name: "Bob")])
+        let section = SGTableViewDataSourceSection(rows: [Row.nameCell(name: "Dave"), Row.nameCell(name: "Geoffery")])
         return SGTableViewDataSource(sections: [section])
     }()
     

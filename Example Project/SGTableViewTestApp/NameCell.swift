@@ -9,7 +9,9 @@
 import UIKit
 
 class NameCell: UITableViewCell {
-    func configureNameCell(name: String) {
-        print("Configuring! \(name)")
+    @IBOutlet private var nameLabel: UILabel!
+    
+    func configure(name: String) {
+        nameLabel.text = name
     }
 }

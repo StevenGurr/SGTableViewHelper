@@ -22,6 +22,7 @@ public extension UITableView {
             if let newValue = newValue {
                 let handler = TableViewHandler(dataSource: newValue)
                 dataSource = handler
+                delegate = handler
                 objc_setAssociatedObject(self, handlerKey, handler, .OBJC_ASSOCIATION_RETAIN)
             } else {
                 objc_setAssociatedObject(self, handlerKey, nil, .OBJC_ASSOCIATION_RETAIN)
@@ -58,5 +59,15 @@ extension TableViewHandler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return dataSource.tableView(tableView, titleForFooterInSection: section)
+    }
+}
+
+extension TableViewHandler: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        dataSource.row(at: indexPath).willDisplay(cell: cell)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataSource.row(at: indexPath).tableView(tableView, didSelectRowAt: indexPath)
     }
 }

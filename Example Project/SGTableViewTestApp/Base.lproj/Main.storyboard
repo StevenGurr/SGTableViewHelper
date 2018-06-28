@@ -46,20 +46,46 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my name is bob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-sV-2VU">
-                                                    <rect key="frame" x="25" y="21" width="325" height="69"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jf-OX-7AX">
+                                                    <rect key="frame" x="23" y="19" width="158.5" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="my name is: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-sV-2VU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="40"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#name#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1K-x4-L2F">
+                                                            <rect key="frame" x="95.5" y="0.0" width="63" height="40"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-F1-TU4">
+                                                    <rect key="frame" x="231" y="67" width="121" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Zpk-P8-wQ5"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rW2-sV-2VU" firstAttribute="top" secondItem="B9O-vz-rn4" secondAttribute="topMargin" constant="10" id="3B4-b1-sHK"/>
-                                                <constraint firstItem="rW2-sV-2VU" firstAttribute="leading" secondItem="B9O-vz-rn4" secondAttribute="leadingMargin" constant="10" id="Bqv-GP-t3h"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="rW2-sV-2VU" secondAttribute="bottom" constant="10" id="H5i-Xt-rov"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="rW2-sV-2VU" secondAttribute="trailing" constant="10" id="mki-iK-pp5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ycM-F1-TU4" secondAttribute="bottom" constant="8" id="Lsi-Cp-ZO6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ycM-F1-TU4" secondAttribute="trailing" constant="8" id="Xqv-Wr-pUu"/>
+                                                <constraint firstItem="ycM-F1-TU4" firstAttribute="top" secondItem="1Jf-OX-7AX" secondAttribute="bottom" constant="8" id="cG9-9b-5Yk"/>
+                                                <constraint firstItem="1Jf-OX-7AX" firstAttribute="top" secondItem="B9O-vz-rn4" secondAttribute="topMargin" constant="8" id="cby-fG-6Cf"/>
+                                                <constraint firstItem="ycM-F1-TU4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B9O-vz-rn4" secondAttribute="leading" constant="20" id="r49-Lu-uJP"/>
+                                                <constraint firstItem="1Jf-OX-7AX" firstAttribute="leading" secondItem="B9O-vz-rn4" secondAttribute="leadingMargin" constant="8" id="zc8-9y-NZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="E1K-x4-L2F" id="bLD-Sv-CJY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
