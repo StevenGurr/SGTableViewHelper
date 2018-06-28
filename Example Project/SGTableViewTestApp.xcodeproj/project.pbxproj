@@ -12,20 +12,9 @@
 		B03FFEC120E2D6DE00057E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEBF20E2D6DE00057E7E /* Main.storyboard */; };
 		B03FFEC320E2D6E000057E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC220E2D6E000057E7E /* Assets.xcassets */; };
 		B03FFEC620E2D6E000057E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC420E2D6E000057E7E /* LaunchScreen.storyboard */; };
-		B03FFEDA20E2D83300057E7E /* SGTableViewData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03FFED820E2D77100057E7E /* SGTableViewData.framework */; };
 		B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDB20E2DB0400057E7E /* NameCell.swift */; };
 		B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B03FFED720E2D77100057E7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B03FFED320E2D77100057E7E /* SGTableViewData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B03FFEA220E2D51100057E7E;
-			remoteInfo = SGTableViewData;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B03FFEB820E2D6DE00057E7E /* SGTableViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGTableViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +24,7 @@
 		B03FFEC220E2D6E000057E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03FFEC520E2D6E000057E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03FFEC720E2D6E000057E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B03FFED320E2D77100057E7E /* SGTableViewData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGTableViewData.xcodeproj; path = ../SGTableViewData.xcodeproj; sourceTree = "<group>"; };
+		B03FFED320E2D77100057E7E /* SGTableViewHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGTableViewHelper.xcodeproj; path = ../SGTableViewHelper.xcodeproj; sourceTree = "<group>"; };
 		B03FFEDB20E2DB0400057E7E /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
 		B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03FFEDA20E2D83300057E7E /* SGTableViewData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +43,7 @@
 		B03FFEAF20E2D6DE00057E7E = {
 			isa = PBXGroup;
 			children = (
-				B03FFED320E2D77100057E7E /* SGTableViewData.xcodeproj */,
+				B03FFED320E2D77100057E7E /* SGTableViewHelper.xcodeproj */,
 				B03FFEBA20E2D6DE00057E7E /* SGTableViewTestApp */,
 				B03FFEB920E2D6DE00057E7E /* Products */,
 				B03FFED920E2D83300057E7E /* Frameworks */,
@@ -83,14 +71,6 @@
 				B03FFEC720E2D6E000057E7E /* Info.plist */,
 			);
 			path = SGTableViewTestApp;
-			sourceTree = "<group>";
-		};
-		B03FFED420E2D77100057E7E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B03FFED820E2D77100057E7E /* SGTableViewData.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B03FFED920E2D83300057E7E /* Frameworks */ = {
@@ -146,28 +126,12 @@
 			mainGroup = B03FFEAF20E2D6DE00057E7E;
 			productRefGroup = B03FFEB920E2D6DE00057E7E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B03FFED420E2D77100057E7E /* Products */;
-					ProjectRef = B03FFED320E2D77100057E7E /* SGTableViewData.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B03FFEB720E2D6DE00057E7E /* SGTableViewTestApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B03FFED820E2D77100057E7E /* SGTableViewData.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SGTableViewData.framework;
-			remoteRef = B03FFED720E2D77100057E7E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B03FFEB620E2D6DE00057E7E /* Resources */ = {

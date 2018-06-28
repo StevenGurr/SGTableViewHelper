@@ -8,19 +8,19 @@
 
 import Foundation
 
-public struct SGTableViewDataSource {
-    let sections: [SGTableViewDataSourceSection]
+struct SGTableViewHelper {
+    let sections: [SGTableViewHelperSection]
     
     var numberOfSections: Int {
         return sections.count
     }
     
-    public init(sections: [SGTableViewDataSourceSection]) {
+    public init(sections: [SGTableViewHelperSection]) {
         self.sections = sections
     }
     
-    public init(rows: [SGTableViewDataSourceRow]) {
-        self.sections = [SGTableViewDataSourceSection(rows: rows)]
+    public init(rows: [SGTableViewHelperRow]) {
+        self.sections = [SGTableViewHelperSection(rows: rows)]
     }
     
     func numberOfRowsIn(section: Int) -> Int {
@@ -31,13 +31,9 @@ public struct SGTableViewDataSource {
         return tableView.dequeueReusableCell(withIdentifier: sections[indexPath.section].rows[indexPath.row].reuseIdentifier, for: indexPath)
     }
     
-    func row(at indexPath: IndexPath) -> SGTableViewDataSourceRow {
+    func row(at indexPath: IndexPath) -> SGTableViewHelperRow {
         return sections[indexPath.section].rows[indexPath.row]
     }
-    
-//    func willDisplay(cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        sections[indexPath.section].rows[indexPath.row].willDisplay(cell: cell)
-//    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].titleForHeader

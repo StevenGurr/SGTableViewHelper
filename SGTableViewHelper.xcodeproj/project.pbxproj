@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B03FFEA720E2D51100057E7E /* SGTableViewData.h in Headers */ = {isa = PBXBuildFile; fileRef = B03FFEA520E2D51100057E7E /* SGTableViewData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B03FFEAE20E2D55800057E7E /* SGTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */; };
-		B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */; };
-		B08B7E3B20E565DE00D7C709 /* SGTableViewDataSourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3A20E565DE00D7C709 /* SGTableViewDataSourceSection.swift */; };
-		B08B7E3D20E565EE00D7C709 /* SGTableViewDataSourceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3C20E565EE00D7C709 /* SGTableViewDataSourceRow.swift */; };
+		B03FFEAE20E2D55800057E7E /* SGTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEAD20E2D55800057E7E /* SGTableViewHelper.swift */; };
+		B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */; };
+		B08B7E3B20E565DE00D7C709 /* SGTableViewHelperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */; };
+		B08B7E3D20E565EE00D7C709 /* SGTableViewHelperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B03FFEA220E2D51100057E7E /* SGTableViewData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGTableViewData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B03FFEA520E2D51100057E7E /* SGTableViewData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGTableViewData.h; sourceTree = "<group>"; };
+		B03FFEA220E2D51100057E7E /* SGTableViewHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGTableViewHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03FFEA620E2D51100057E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewDataSource.swift; sourceTree = "<group>"; };
-		B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SGTableViewData.swift"; sourceTree = "<group>"; };
-		B08B7E3A20E565DE00D7C709 /* SGTableViewDataSourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewDataSourceSection.swift; sourceTree = "<group>"; };
-		B08B7E3C20E565EE00D7C709 /* SGTableViewDataSourceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewDataSourceRow.swift; sourceTree = "<group>"; };
+		B03FFEAD20E2D55800057E7E /* SGTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelper.swift; sourceTree = "<group>"; };
+		B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SGTableViewHelper.swift"; sourceTree = "<group>"; };
+		B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelperSection.swift; sourceTree = "<group>"; };
+		B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelperRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +36,7 @@
 		B03FFE9820E2D51100057E7E = {
 			isa = PBXGroup;
 			children = (
-				B03FFEA420E2D51100057E7E /* SGTableViewData */,
+				B03FFEA420E2D51100057E7E /* SGTableViewHelper */,
 				B03FFEA320E2D51100057E7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,22 +44,21 @@
 		B03FFEA320E2D51100057E7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B03FFEA220E2D51100057E7E /* SGTableViewData.framework */,
+				B03FFEA220E2D51100057E7E /* SGTableViewHelper.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B03FFEA420E2D51100057E7E /* SGTableViewData */ = {
+		B03FFEA420E2D51100057E7E /* SGTableViewHelper */ = {
 			isa = PBXGroup;
 			children = (
-				B03FFEA520E2D51100057E7E /* SGTableViewData.h */,
 				B03FFEA620E2D51100057E7E /* Info.plist */,
-				B03FFEAD20E2D55800057E7E /* SGTableViewDataSource.swift */,
-				B08B7E3A20E565DE00D7C709 /* SGTableViewDataSourceSection.swift */,
-				B08B7E3C20E565EE00D7C709 /* SGTableViewDataSourceRow.swift */,
-				B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewData.swift */,
+				B03FFEAD20E2D55800057E7E /* SGTableViewHelper.swift */,
+				B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */,
+				B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */,
+				B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */,
 			);
-			path = SGTableViewData;
+			path = SGTableViewHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,16 +68,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03FFEA720E2D51100057E7E /* SGTableViewData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B03FFEA120E2D51100057E7E /* SGTableViewData */ = {
+		B03FFEA120E2D51100057E7E /* SGTableViewHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B03FFEAA20E2D51100057E7E /* Build configuration list for PBXNativeTarget "SGTableViewData" */;
+			buildConfigurationList = B03FFEAA20E2D51100057E7E /* Build configuration list for PBXNativeTarget "SGTableViewHelper" */;
 			buildPhases = (
 				B03FFE9D20E2D51100057E7E /* Sources */,
 				B03FFE9E20E2D51100057E7E /* Frameworks */,
@@ -91,9 +87,9 @@
 			);
 			dependencies = (
 			);
-			name = SGTableViewData;
+			name = SGTableViewHelper;
 			productName = SGTableViewData;
-			productReference = B03FFEA220E2D51100057E7E /* SGTableViewData.framework */;
+			productReference = B03FFEA220E2D51100057E7E /* SGTableViewHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B03FFE9C20E2D51100057E7E /* Build configuration list for PBXProject "SGTableViewData" */;
+			buildConfigurationList = B03FFE9C20E2D51100057E7E /* Build configuration list for PBXProject "SGTableViewHelper" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B03FFEA120E2D51100057E7E /* SGTableViewData */,
+				B03FFEA120E2D51100057E7E /* SGTableViewHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -143,10 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03FFEAE20E2D55800057E7E /* SGTableViewDataSource.swift in Sources */,
-				B08B7E3D20E565EE00D7C709 /* SGTableViewDataSourceRow.swift in Sources */,
-				B08B7E3B20E565DE00D7C709 /* SGTableViewDataSourceSection.swift in Sources */,
-				B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewData.swift in Sources */,
+				B03FFEAE20E2D55800057E7E /* SGTableViewHelper.swift in Sources */,
+				B08B7E3D20E565EE00D7C709 /* SGTableViewHelperRow.swift in Sources */,
+				B08B7E3B20E565DE00D7C709 /* SGTableViewHelperSection.swift in Sources */,
+				B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +287,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stevengurr.SGTableViewData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stevengurr.SGTableViewHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -318,7 +314,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stevengurr.SGTableViewData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stevengurr.SGTableViewHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -329,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B03FFE9C20E2D51100057E7E /* Build configuration list for PBXProject "SGTableViewData" */ = {
+		B03FFE9C20E2D51100057E7E /* Build configuration list for PBXProject "SGTableViewHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B03FFEA820E2D51100057E7E /* Debug */,
@@ -338,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B03FFEAA20E2D51100057E7E /* Build configuration list for PBXNativeTarget "SGTableViewData" */ = {
+		B03FFEAA20E2D51100057E7E /* Build configuration list for PBXNativeTarget "SGTableViewHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B03FFEAB20E2D51100057E7E /* Debug */,

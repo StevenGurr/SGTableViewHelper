@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol SGTableViewDataSourceRow {
+public protocol SGTableViewHelperRow {
     var reuseIdentifier: String { get }
     
     // UITableViewDelegate callbacks
@@ -16,7 +16,7 @@ public protocol SGTableViewDataSourceRow {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
 }
 
-public extension SGTableViewDataSourceRow {
+public extension SGTableViewHelperRow {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct SGTableViewDataSourceSection {
-    let rows: [SGTableViewDataSourceRow]
+public struct SGTableViewHelperSection {
+    let rows: [SGTableViewHelperRow]
     let titleForHeader: String?
     let titleForFooter: String?
     
-    public init(rows: [SGTableViewDataSourceRow], titleForHeader: String? = nil, titleForFooter: String? = nil) {
+    public init(rows: [SGTableViewHelperRow], titleForHeader: String? = nil, titleForFooter: String? = nil) {
         self.rows = rows
         self.titleForHeader = titleForHeader
         self.titleForFooter = titleForFooter
