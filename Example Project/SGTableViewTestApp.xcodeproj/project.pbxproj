@@ -16,6 +16,16 @@
 		B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B02C531E20E56EDE00FEA76A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B03FFED320E2D77100057E7E /* SGTableViewHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B03FFEA220E2D51100057E7E;
+			remoteInfo = SGTableViewHelper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B03FFEB820E2D6DE00057E7E /* SGTableViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGTableViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03FFEBB20E2D6DE00057E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02C531B20E56EDC00FEA76A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B02C531F20E56EDE00FEA76A /* SGTableViewHelper.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B03FFEAF20E2D6DE00057E7E = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +144,28 @@
 			mainGroup = B03FFEAF20E2D6DE00057E7E;
 			productRefGroup = B03FFEB920E2D6DE00057E7E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B02C531B20E56EDC00FEA76A /* Products */;
+					ProjectRef = B03FFED320E2D77100057E7E /* SGTableViewHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B03FFEB720E2D6DE00057E7E /* SGTableViewTestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B02C531F20E56EDE00FEA76A /* SGTableViewHelper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SGTableViewHelper.framework;
+			remoteRef = B02C531E20E56EDE00FEA76A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B03FFEB620E2D6DE00057E7E /* Resources */ = {

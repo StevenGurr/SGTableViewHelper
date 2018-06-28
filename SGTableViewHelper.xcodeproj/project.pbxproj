@@ -54,8 +54,8 @@
 			children = (
 				B03FFEA620E2D51100057E7E /* Info.plist */,
 				B03FFEAD20E2D55800057E7E /* SGTableViewHelper.swift */,
-				B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */,
 				B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */,
+				B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */,
 				B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */,
 			);
 			path = SGTableViewHelper;
@@ -280,7 +280,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SGTableViewData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SGTableViewHelper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,7 +307,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SGTableViewData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SGTableViewHelper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

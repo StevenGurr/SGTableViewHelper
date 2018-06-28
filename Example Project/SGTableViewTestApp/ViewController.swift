@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import SGTableViewData
+import SGTableViewHelper
 
 class ViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     
-    lazy var data: SGTableViewDataSource = {
+    lazy var helper: SGTableViewHelper = {
         let row = PersonNameRow.nameCell
-        let section = SGTableViewDataSourceSection(rows: [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")])
-        return SGTableViewDataSource(sections: [section])
+        let section = SGTableViewHelperSection(rows: [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")])
+        return SGTableViewHelper(sections: [section])
     }()
     
     override func viewDidLoad() {
-       tableView.sgTableDataSource = data
+       tableView.sgTableViewHelper = helper
     }
 }

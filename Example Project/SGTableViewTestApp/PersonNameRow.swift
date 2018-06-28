@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import SGTableViewData
+import SGTableViewHelper
 
-enum PersonNameRow: SGTableViewDataSourceRow {
+enum PersonNameRow: SGTableViewHelperRow {
     case nameCell(name: String)
     
     var reuseIdentifier: String {

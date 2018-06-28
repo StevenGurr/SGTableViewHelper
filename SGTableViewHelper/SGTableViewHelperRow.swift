@@ -6,7 +6,7 @@
 //  Copyright © 2018 Steven Gurr. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public protocol SGTableViewHelperRow {
     var reuseIdentifier: String { get }

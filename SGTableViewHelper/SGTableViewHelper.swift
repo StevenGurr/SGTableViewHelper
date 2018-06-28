@@ -6,14 +6,10 @@
 //  Copyright © 2018 Steven Gurr. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct SGTableViewHelper {
+public struct SGTableViewHelper {
     let sections: [SGTableViewHelperSection]
-    
-    var numberOfSections: Int {
-        return sections.count
-    }
     
     public init(sections: [SGTableViewHelperSection]) {
         self.sections = sections
@@ -21,6 +17,12 @@ struct SGTableViewHelper {
     
     public init(rows: [SGTableViewHelperRow]) {
         self.sections = [SGTableViewHelperSection(rows: rows)]
+    }
+}
+
+extension SGTableViewHelper {
+    var numberOfSections: Int {
+        return sections.count
     }
     
     func numberOfRowsIn(section: Int) -> Int {
