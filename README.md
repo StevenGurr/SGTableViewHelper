@@ -21,7 +21,8 @@ enum PersonNameRow: SGTableViewHelperRow {
             (cell as? NameCell)?.configure(name: name)
         }
     }
-}```
+}
+```
 
 You can also optionally add the callback for when the row is selected, via:
 ```swift
