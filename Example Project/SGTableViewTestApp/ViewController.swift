@@ -44,29 +44,6 @@ class ViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.sgTableDataSource = data
-    }
-}
-
-extension ViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return data.numberOfSections
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.numberOfRowsIn(section: section)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return data.tableView(tableView, cellForRowAt: indexPath)
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        data.willDisplay(cell: cell, forRowAt: indexPath)
+       tableView.sgTableDataSource = data
     }
 }

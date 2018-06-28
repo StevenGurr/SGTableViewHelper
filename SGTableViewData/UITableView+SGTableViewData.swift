@@ -9,14 +9,54 @@
 import Foundation
 
 fileprivate let dataSourceKey = "SGDataSource"
+fileprivate let handlerKey = "SGTableViewHandler"
 
 public extension UITableView {
-    public var sgTableDataSource: SGTableViewDataSource {
+    public var sgTableDataSource: SGTableViewDataSource? {
         get {
-            return objc_getAssociatedObject(self, dataSourceKey) as! SGTableViewDataSource
+            return objc_getAssociatedObject(self, dataSourceKey) as? SGTableViewDataSource
         }
         set {
             objc_setAssociatedObject(self, dataSourceKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            
+            if let newValue = newValue {
+                let handler = TableViewHandler(dataSource: newValue)
+                dataSource = handler
+                objc_setAssociatedObject(self, handlerKey, handler, .OBJC_ASSOCIATION_RETAIN)
+            } else {
+                objc_setAssociatedObject(self, handlerKey, nil, .OBJC_ASSOCIATION_RETAIN)
+            }
         }
+    }
+}
+
+private class TableViewHandler: NSObject {
+    private let dataSource: SGTableViewDataSource
+
+    init(dataSource: SGTableViewDataSource) {
+        self.dataSource = dataSource
+        super.init()
+    }
+}
+
+extension TableViewHandler: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSource.numberOfSections
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.numberOfRowsIn(section: section)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return dataSource.tableView(tableView, cellForRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataSource.tableView(tableView, titleForHeaderInSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return dataSource.tableView(tableView, titleForFooterInSection: section)
     }
 }

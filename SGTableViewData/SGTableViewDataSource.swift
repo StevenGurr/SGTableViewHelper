@@ -11,7 +11,7 @@ import Foundation
 public struct SGTableViewDataSource {
     let sections: [SGTableViewDataSourceSection]
     
-    public var numberOfSections: Int {
+    var numberOfSections: Int {
         return sections.count
     }
     
@@ -19,33 +19,31 @@ public struct SGTableViewDataSource {
         self.sections = sections
     }
     
-    public func numberOfRowsIn(section: Int) -> Int {
+    public init(rows: [SGTableViewDataSourceRow]) {
+        self.sections = [SGTableViewDataSourceSection(rows: rows)]
+    }
+    
+    func numberOfRowsIn(section: Int) -> Int {
         return sections[section].rows.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: sections[indexPath.section].rows[indexPath.row].reuseIdentifier, for: indexPath)
     }
     
-    public func row(at indexPath: IndexPath) -> SGTableViewDataSourceRow {
+    func row(at indexPath: IndexPath) -> SGTableViewDataSourceRow {
         return sections[indexPath.section].rows[indexPath.row]
     }
     
-    public func willDisplay(cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        sections[indexPath.section].rows[indexPath.row].willDisplay(cell: cell)
-    }
-}
-
-public struct SGTableViewDataSourceSection {
-    let rows: [SGTableViewDataSourceRow]
+//    func willDisplay(cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        sections[indexPath.section].rows[indexPath.row].willDisplay(cell: cell)
+//    }
     
-    public init(rows: [SGTableViewDataSourceRow]) {
-        self.rows = rows
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].titleForHeader
     }
-}
-
-public protocol SGTableViewDataSourceRow {
-    var reuseIdentifier: String { get }
-    var configureBlock: (UITableViewCell) -> Void { get }
-    func willDisplay(cell: UITableViewCell)
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return sections[section].titleForFooter
+    }
 }
