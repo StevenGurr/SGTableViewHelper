@@ -17,6 +17,10 @@ public protocol SGTableViewHelperRow {
 }
 
 public extension SGTableViewHelperRow {
+    public func willDisplay(cell: UITableViewCell) {
+        // Do nothing
+    }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
