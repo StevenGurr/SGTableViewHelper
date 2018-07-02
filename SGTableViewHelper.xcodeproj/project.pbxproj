@@ -11,6 +11,7 @@
 		B03FFEDE20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */; };
 		B08B7E3B20E565DE00D7C709 /* SGTableViewHelperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */; };
 		B08B7E3D20E565EE00D7C709 /* SGTableViewHelperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */; };
+		B09FC4E620EAAE84005E8976 /* SGTableViewHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FC4E520EAAE84005E8976 /* SGTableViewHelperDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SGTableViewHelper.swift"; sourceTree = "<group>"; };
 		B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelperSection.swift; sourceTree = "<group>"; };
 		B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelperRow.swift; sourceTree = "<group>"; };
+		B09FC4E520EAAE84005E8976 /* SGTableViewHelperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTableViewHelperDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				B03FFEA620E2D51100057E7E /* Info.plist */,
 				B03FFEAD20E2D55800057E7E /* SGTableViewHelper.swift */,
+				B09FC4E520EAAE84005E8976 /* SGTableViewHelperDelegate.swift */,
 				B08B7E3C20E565EE00D7C709 /* SGTableViewHelperRow.swift */,
 				B08B7E3A20E565DE00D7C709 /* SGTableViewHelperSection.swift */,
 				B03FFEDD20E2DD4200057E7E /* UITableView+SGTableViewHelper.swift */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09FC4E620EAAE84005E8976 /* SGTableViewHelperDelegate.swift in Sources */,
 				B03FFEAE20E2D55800057E7E /* SGTableViewHelper.swift in Sources */,
 				B08B7E3D20E565EE00D7C709 /* SGTableViewHelperRow.swift in Sources */,
 				B08B7E3B20E565DE00D7C709 /* SGTableViewHelperSection.swift in Sources */,

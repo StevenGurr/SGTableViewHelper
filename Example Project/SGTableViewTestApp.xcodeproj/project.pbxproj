@@ -14,6 +14,7 @@
 		B03FFEC620E2D6E000057E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC420E2D6E000057E7E /* LaunchScreen.storyboard */; };
 		B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDB20E2DB0400057E7E /* NameCell.swift */; };
 		B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */; };
+		B09FC4E820EACAB7005E8976 /* SGTableViewHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02C531F20E56EDE00FEA76A /* SGTableViewHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09FC4E820EACAB7005E8976 /* SGTableViewHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

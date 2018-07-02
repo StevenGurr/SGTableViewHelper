@@ -8,25 +8,35 @@
 
 import UIKit
 
-private let helperKey = "SGHelper"
-private let handlerKey = "SGTableViewHandler"
+private var helperKey: NSString = "SGHelper"
+private var handlerKey: NSString = "SGTableViewHandler"
+private var delegateKey: NSString = "SGTableViewHelperDelegate"
 
 public extension UITableView {
     public var sgTableViewHelper: SGTableViewHelper? {
         get {
-            return objc_getAssociatedObject(self, helperKey) as? SGTableViewHelper
+            return objc_getAssociatedObject(self, &helperKey) as? SGTableViewHelper
         }
         set(helper) {
-            objc_setAssociatedObject(self, helperKey, helper, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &helperKey, helper, .OBJC_ASSOCIATION_RETAIN)
             
             if let helper = helper {
                 let handler = TableViewHandler(helper: helper)
                 dataSource = handler
                 delegate = handler
-                objc_setAssociatedObject(self, handlerKey, handler, .OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, &handlerKey, handler, .OBJC_ASSOCIATION_RETAIN)
             } else {
-                objc_setAssociatedObject(self, handlerKey, nil, .OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, &handlerKey, nil, .OBJC_ASSOCIATION_RETAIN)
             }
+        }
+    }
+    
+    public var sgTableViewHelperDelegate: SGTableViewHelperDelegate? {
+        get {
+            return objc_getAssociatedObject(self, &delegateKey) as? SGTableViewHelperDelegate
+        }
+        set(sgTableViewHelperDelegate) {
+            objc_setAssociatedObject(self, &delegateKey, sgTableViewHelperDelegate, .OBJC_ASSOCIATION_ASSIGN)
         }
     }
 }
@@ -68,6 +78,6 @@ extension TableViewHandler: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        helper.row(at: indexPath).tableView(tableView, didSelectRowAt: indexPath)
+        tableView.sgTableViewHelperDelegate?.didSelectRow(tableView: tableView, didSelect: helper.row(at: indexPath), at: indexPath)
     }
 }

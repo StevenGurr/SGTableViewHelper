@@ -20,6 +20,14 @@ class ViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
-       tableView.sgTableViewHelper = helper
+        tableView.sgTableViewHelper = helper
+        tableView.sgTableViewHelperDelegate = self
+    }
+}
+
+extension ViewController: SGTableViewHelperDelegate {
+    func didSelectRow(tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("Selected \(row)")
     }
 }

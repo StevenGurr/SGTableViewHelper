@@ -35,11 +35,7 @@ type_name:
 
 identifier_name:
   min_length: # only min_length
-    error: 4 # only error
-  excluded: # excluded via string array
-    - id
-    - URL
-    - GlobalAPIKey
+    error: 3 # only error
 
 trailing_whitespace:
   ignores_empty_lines: true
