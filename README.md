@@ -1,5 +1,5 @@
 ## SGTableViewHelper
-A framework to make building `UITableView`s easier, removing the need for all the boilerplate code. Just define the smallest required amount of information in `enum` `case`s and point the tableview at it, and the rest just works!
+A framework to make building `UITableView`s easier, removing the need for all the boilerplate code. Just define the smallest required amount of information in `enum` `case`s and point the tableview at it, and the rest just works! No more worrying about getting the number of rows wrong, no more array out of bounds issues, etc!
 
 ## How to use
 # UITableView Cell Definitions
