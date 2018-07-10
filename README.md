@@ -35,13 +35,24 @@ In this enum you can optionally add two functions. Firsly:
 ```swift
 func willDisplay(cell: UITableViewCell)
 ```
-The default implementation does absolutely nothing, but if you need to configure the cells contents before they're displayed, this is where you do it. The `UITableViewCell` instance is passed in via the parameter.
+The default implementation does absolutely nothing, but this is the equivalent of UITableViewDelegate's `tableView(UITableView, willDisplay: UITableViewCell, forRowAt: IndexPath)`.
 
-Secondly, the callback for when the row is selected, via:
+Secondly:
 ```swift
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+func cellForRow(cell: UITableViewCell)
 ```
-The default implementation of this just calls `deselectRow(at indexPath: IndexPath, animated: Bool))`.
+
+This is the equivalent of UITableViewDataSource's `tableView(_ tableView: UITableView, 
+  cellForRowAt indexPath: IndexPath)`, except the cell instance has alredy been dequeued and will be returned. This is simply your opportunity to set any data or do whatever else you'd normally do before it's returned.
+
+
+## SGTableViewHelperDelegate
+There is also a delegate method for your view controller to be informed when a cell is selected. This is similar to the standard `func tableView(_ tableView: UITableView, 
+         didSelectRowAt indexPath: IndexPath)` except that it passes in the instance of `SGTableViewHelperRow` which was selected alongside the `UITableView` and `IndexPath` instances.
+```swift
+func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath)
+```
+There is a default implementation of this which does nothing, so this can be considered optional.
 
 # Single Section Example
 If your `UITableView` only has one section, then you just need to make an array of instances of the aforementioned `enum`, where each one represents a row in your table, in order. Then put that array in to an instance of `SGTableViewHelper`. For example:
