@@ -26,7 +26,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: SGTableViewHelperDelegate {
-    func didSelectRow(tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("Selected \(row)")
     }

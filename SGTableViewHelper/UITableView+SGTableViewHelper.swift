@@ -78,6 +78,7 @@ extension TableViewHandler: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.sgTableViewHelperDelegate?.didSelectRow(tableView: tableView, didSelect: helper.row(at: indexPath), at: indexPath)
+        let row = helper.row(at: indexPath)
+        tableView.sgTableViewHelperDelegate?.tableView(tableView, didSelect: row, at: indexPath)
     }
 }

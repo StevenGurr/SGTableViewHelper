@@ -11,10 +11,15 @@ import UIKit
 public protocol SGTableViewHelperRow {
     var reuseIdentifier: String { get }
     
+    func cellForRow(cell: UITableViewCell)
     func willDisplay(cell: UITableViewCell)
 }
 
 public extension SGTableViewHelperRow {
+    public func cellForRow(cell: UITableViewCell) {
+        // Do nothing
+    }
+    
     public func willDisplay(cell: UITableViewCell) {
         // Do nothing
     }

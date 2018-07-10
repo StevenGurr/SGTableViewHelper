@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol SGTableViewHelperDelegate: class {
-    func didSelectRow(tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath)
 }

@@ -30,7 +30,9 @@ extension SGTableViewHelper {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: row(at: indexPath).reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: row(at: indexPath).reuseIdentifier, for: indexPath)
+        sections[indexPath.section].rows[indexPath.row].cellForRow(cell: cell)
+        return cell
     }
     
     func row(at indexPath: IndexPath) -> SGTableViewHelperRow {

@@ -19,7 +19,7 @@ enum PersonNameRow: SGTableViewHelperRow {
         }
     }
     
-    func willDisplay(cell: UITableViewCell) {
+    func cellForRow(cell: UITableViewCell) {
         switch self {
         case let .nameCell(name):
             (cell as? NameCell)?.configure(name: name)
