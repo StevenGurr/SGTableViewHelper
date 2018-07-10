@@ -1,8 +1,8 @@
-## SGTableViewHelper
+# SGTableViewHelper
 A framework to make building `UITableView`s easier, removing the need for all the boilerplate code. Just define the smallest required amount of information in `enum` `case`s and point the tableview at it, and the rest just works! No more worrying about getting the number of rows wrong, no more array out of bounds issues, etc!
 
-## How to use
-# UITableView Cell Definitions
+# How to use
+## SGTableViewHelperRow
 The Framework defines a protocol called `SGTableViewHelperRow` which looks like this:
 
 ```swift
@@ -54,7 +54,8 @@ func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at
 ```
 There is a default implementation of this which does nothing, so this can be considered optional.
 
-# Single Section Example
+# Examples
+## Single Section Example
 If your `UITableView` only has one section, then you just need to make an array of instances of the aforementioned `enum`, where each one represents a row in your table, in order. Then put that array in to an instance of `SGTableViewHelper`. For example:
 ```swift
 let rows = [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")]
@@ -69,7 +70,7 @@ let helper = SGTableViewHelper(rows: rows)
 tableView.sgTableViewHelper = helper
 ```
 
-# Multiple Section Example
+## Multiple Section Example
 If you need more than one section to use sections too, prepare your rows in to arrays as above, then instantiate some `SGTableViewHelperSection`s. Each one represents a section in the `UITableView`, and holds the array of rows (`SGTableViewHelperRow` instances) that belong within that section. For example:
 
 ```swift
@@ -86,5 +87,5 @@ let helper = SGTableViewHelper(sections: [section])
 tableView.sgTableViewHelper = helper
 ```
 
-# Section Header And Footer
+## Section Header And Footer
 The `init` of `SGTableViewHelperSection` takes a `titleForHeader` optional String, and a `titleForFooter` optional String. If you want these, you may want to use a `SGTableViewHelperSection` instance to wrap the rows, even if you only want to display a single section.
