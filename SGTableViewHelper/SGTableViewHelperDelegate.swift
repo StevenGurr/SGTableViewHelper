@@ -11,3 +11,9 @@ import UIKit
 public protocol SGTableViewHelperDelegate: class {
     func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath)
 }
+
+extension SGTableViewHelperDelegate {
+    public func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath) {
+        // Do nothing
+    }
+}
