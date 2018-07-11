@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
       s.name            = "SGTableViewHelper"
-      s.version         = "0.3"
+      s.version         = "0.4"
       s.summary         = "A framework to make building UITableViews easier, removing the need for all the boilerplate code."
       s.homepage        = "https://github.com/StevenGurr/SGTableViewHelper"
       s.license         = { :type => 'MIT', :file => 'LICENSE' }
