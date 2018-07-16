@@ -73,10 +73,6 @@ extension TableViewHandler: UITableViewDataSource {
 }
 
 extension TableViewHandler: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        helper.row(at: indexPath).willDisplay(cell: cell)
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = helper.row(at: indexPath)
         tableView.sgTableViewHelperDelegate?.tableView(tableView, didSelect: row, at: indexPath)

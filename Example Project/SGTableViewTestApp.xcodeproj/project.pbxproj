@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03C1A1F20FD1403000F7B1C /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03C1A1E20FD1403000F7B1C /* LogoCell.swift */; };
 		B03FFEBC20E2D6DE00057E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEBB20E2D6DE00057E7E /* AppDelegate.swift */; };
 		B03FFEBE20E2D6DE00057E7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEBD20E2D6DE00057E7E /* ViewController.swift */; };
 		B03FFEC120E2D6DE00057E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEBF20E2D6DE00057E7E /* Main.storyboard */; };
 		B03FFEC320E2D6E000057E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC220E2D6E000057E7E /* Assets.xcassets */; };
 		B03FFEC620E2D6E000057E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03FFEC420E2D6E000057E7E /* LaunchScreen.storyboard */; };
 		B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03FFEDB20E2DB0400057E7E /* NameCell.swift */; };
-		B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */; };
+		B08B7E3F20E56CF100D7C709 /* ExampleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B7E3E20E56CF100D7C709 /* ExampleRow.swift */; };
 		B09FC4E820EACAB7005E8976 /* SGTableViewHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02C531F20E56EDE00FEA76A /* SGTableViewHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B03C1A1E20FD1403000F7B1C /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
 		B03FFEB820E2D6DE00057E7E /* SGTableViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGTableViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03FFEBB20E2D6DE00057E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03FFEBD20E2D6DE00057E7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		B03FFEC720E2D6E000057E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03FFED320E2D77100057E7E /* SGTableViewHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGTableViewHelper.xcodeproj; path = ../SGTableViewHelper.xcodeproj; sourceTree = "<group>"; };
 		B03FFEDB20E2DB0400057E7E /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
-		B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameRow.swift; sourceTree = "<group>"; };
+		B08B7E3E20E56CF100D7C709 /* ExampleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,24 @@
 				B02C531F20E56EDE00FEA76A /* SGTableViewHelper.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B03C1A2020FD171A000F7B1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B03C1A1E20FD1403000F7B1C /* LogoCell.swift */,
+				B03FFEDB20E2DB0400057E7E /* NameCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B03C1A2120FD17A0000F7B1C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B03FFEBD20E2D6DE00057E7E /* ViewController.swift */,
+				B08B7E3E20E56CF100D7C709 /* ExampleRow.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		B03FFEAF20E2D6DE00057E7E = {
@@ -81,10 +101,9 @@
 		B03FFEBA20E2D6DE00057E7E /* SGTableViewTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				B03C1A2020FD171A000F7B1C /* Cells */,
+				B03C1A2120FD17A0000F7B1C /* ViewController */,
 				B03FFEBB20E2D6DE00057E7E /* AppDelegate.swift */,
-				B03FFEBD20E2D6DE00057E7E /* ViewController.swift */,
-				B08B7E3E20E56CF100D7C709 /* PersonNameRow.swift */,
-				B03FFEDB20E2DB0400057E7E /* NameCell.swift */,
 				B03FFEBF20E2D6DE00057E7E /* Main.storyboard */,
 				B03FFEC220E2D6E000057E7E /* Assets.xcassets */,
 				B03FFEC420E2D6E000057E7E /* LaunchScreen.storyboard */,
@@ -189,7 +208,8 @@
 			files = (
 				B03FFEDC20E2DB0400057E7E /* NameCell.swift in Sources */,
 				B03FFEBE20E2D6DE00057E7E /* ViewController.swift in Sources */,
-				B08B7E3F20E56CF100D7C709 /* PersonNameRow.swift in Sources */,
+				B08B7E3F20E56CF100D7C709 /* ExampleRow.swift in Sources */,
+				B03C1A1F20FD1403000F7B1C /* LogoCell.swift in Sources */,
 				B03FFEBC20E2D6DE00057E7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
