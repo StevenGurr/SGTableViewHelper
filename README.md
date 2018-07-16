@@ -1,26 +1,28 @@
 # SGTableViewHelper
-A framework to make building `UITableView`s easier, removing the need for all the boilerplate code. Just define the smallest required amount of information in `enum` `case`s and point the tableview at it, and the rest just works! No more worrying about getting the number of rows wrong, no more array out of bounds issues, etc!
+In iOS development a huge amount of time is spent with UITableViews, and each time there's a lot of the same stuff to do and worry about. You have to define some kind of model to hold the data for each cell as it's dequeued, several places where a small error results in an out of bounds problems causing a horrible crash, and in `cellForRowAt` there's all that casting of the UITableViewCell instance to the type you really know it is.
+
+SGTableViewHelper is a framework to make all that easier, removing the need for all the boilerplate code. Just define the smallest required amount of information in an `enum` and point the tableview at it, and the rest just works! Add associated values and have them automatically passed in to a `configure()` method on the cells. No more worrying about getting the number of rows wrong, no more array out of bounds issues, etc; and best of all no more manually casting a `UITableViewCell` to your real cell types!
+
+With thanks to the blog post at http://holko.pl/2016/01/05/typed-table-view-controller/ for helping me realise how effective PATs can be for this job.
+
+Please check out the example project for a working demonstration of the whole thing.
 
 # How to use
 ## SGTableViewHelperRow
-The Framework defines a protocol called `SGTableViewHelperRow` which looks like this:
+The framework defines a protocol called `SGTableViewHelperRow` which simply has two things you have to return.
 
 ```swift
-public protocol SGTableViewHelperRow {
-    // Required
+protocol SGTableViewHelperRow {
     var reuseIdentifier: String { get }
-    
-    // Optional
-    func willDisplay(cell: UITableViewCell)
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    var cellConfig: SGCellConfigurerProtocol { get }
 }
 ```
 
-Declared an enum which implements this protocol, with a `case` statement for each row type you have. Then implement the `reuseIdentifier` property for each of the `case`s with the string that's in your prototype cell definition. For example:
+Declare an enum which implements this protocol, with a `case` statement for each row type (and custom cell definition) you have. Then simply implement the `reuseIdentifier` property for each of the `case`s with the string that's in your prototype cell definition. For the `cellConfig` property you will need to return an instance of the generic `SGCellConfigurer` with type information telling it which `UITableViewCell` subclass you will be using for that `case`. From the example project:
 
 ```swift
-enum PersonNameRow: SGTableViewHelperRow {
-    case nameCell(name: String)
+enum ExampleRow: SGTableViewHelperRow {
+    case nameCell(name: String, age: Int, accessoryType: UITableViewCellAccessoryType)
     
     var reuseIdentifier: String {
         switch self {
@@ -28,62 +30,40 @@ enum PersonNameRow: SGTableViewHelperRow {
             return "NameCell"
         }
     }
+    
+    var cellConfig: SGCellConfigurerProtocol {
+        switch self {
+        case let .nameCell(cellData):
+            return SGCellConfigurer<NameCell>(cellData: cellData)
+        }
+    }
 }
 ```
 
-In this enum you can optionally add two functions. Firsly:
+## SGConfigurableCell
+In each of the `UITableViewCell` subclasses, implement `SGConfigurableCell`. `SGConfigurableCell` defines just one function:
 ```swift
-func willDisplay(cell: UITableViewCell)
-```
-The default implementation does absolutely nothing, but this is the equivalent of UITableViewDelegate's `tableView(UITableView, willDisplay: UITableViewCell, forRowAt: IndexPath)`.
-
-Secondly:
-```swift
-func cellForRow(cell: UITableViewCell)
+func configure(cellData: CellData)
 ```
 
-This is the equivalent of UITableViewDataSource's `tableView(_ tableView: UITableView, 
-  cellForRowAt indexPath: IndexPath)`, except the cell instance has alredy been dequeued and will be returned. This is simply your opportunity to set any data or do whatever else you'd normally do before it's returned.
+Implement the protocol and define that function to do whatever setting of UI elements you need to do. All the data the cell needs will come in via the `cellData` parameter.
 
+The final step to make it all work is in each of the `SGConfigurableCell` implementing classes add a typealias for `CellData`. It describes what data will need to pass in to the cell to configure it before it's drawn. In the example project I've used a tuple type `typealias CellData = (name: String, age: Int, accessoryType: UITableViewCellAccessoryType)`, but it can just as easily be `typealias CellData = String` if you only need to pass one `String` in.
 
 ## SGTableViewHelperDelegate
-There is also a delegate method for your view controller to be informed when a cell is selected. This is similar to the standard `func tableView(_ tableView: UITableView, 
+On the ViewController hosting the `UITableView`, implement the protocol `SGTableViewHelperDelegate` to know when a row was selected. This is similar to the standard `func tableView(_ tableView: UITableView, 
          didSelectRowAt indexPath: IndexPath)` except that it passes in the instance of `SGTableViewHelperRow` which was selected alongside the `UITableView` and `IndexPath` instances.
 ```swift
 func tableView(_ tableView: UITableView, didSelect row: SGTableViewHelperRow, at indexPath: IndexPath)
 ```
-There is a default implementation of this which does nothing, so this can be considered optional.
+If you don't want to know about row selection, this is optional.
 
-# Examples
-## Single Section Example
-If your `UITableView` only has one section, then you just need to make an array of instances of the aforementioned `enum`, where each one represents a row in your table, in order. Then put that array in to an instance of `SGTableViewHelper`. For example:
-```swift
-let rows = [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")]
-let helper = SGTableViewHelper(rows: rows)
-```
-
-Finally assign the `SGTableViewHelper` instance to the `sgTableViewHelper` property of the `UITableView` 
+## SGTableViewHelper
+Finally, to get the data in to the `UITableView` build an array of the above `enum` `case` instances implementing `SGTableViewHelperRow`. If your `UITableView` has multiple sections then also instantiate instances of `SGTableViewHelperSection` to hold the rows for each section. Finally put the rows or sections in to an instance of `SGTableViewHelper`, and assign that to the `sgTableViewHelper` property of the `UITableView` 
 
 ```swift
 let rows = [PersonNameRow.nameCell(name: "Dave"), PersonNameRow.nameCell(name: "Geoffery")]
 let helper = SGTableViewHelper(rows: rows)
-tableView.sgTableViewHelper = helper
-```
-
-## Multiple Section Example
-If you need more than one section to use sections too, prepare your rows in to arrays as above, then instantiate some `SGTableViewHelperSection`s. Each one represents a section in the `UITableView`, and holds the array of rows (`SGTableViewHelperRow` instances) that belong within that section. For example:
-
-```swift
-let section1 = SGTableViewHelperSection(rows: section1Rows)
-let section2 = SGTableViewHelperSection(rows: section2Rows)
-let helper = SGTableViewHelper(sections: [section])
-```
-
-Finally, as in the single section example, assign the helper to the `sgTableViewHelper` property on your `UITableView`.
-```swift
-let section1 = SGTableViewHelperSection(rows: section1Rows)
-let section2 = SGTableViewHelperSection(rows: section2Rows)
-let helper = SGTableViewHelper(sections: [section])
 tableView.sgTableViewHelper = helper
 ```
 
