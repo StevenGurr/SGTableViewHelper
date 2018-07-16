@@ -24,8 +24,8 @@ enum ExampleRow: SGTableViewHelperRow {
     
     var cellConfig: SGCellConfigurerProtocol {
         switch self {
-        case let .nameCell(name):
-            return SGCellConfigurer<NameCell>(cellData: name)
+        case let .nameCell(cellData):
+            return SGCellConfigurer<NameCell>(cellData: cellData)
         case let .imageCell(image):
             return SGCellConfigurer<LogoCell>(cellData: image)
         }
